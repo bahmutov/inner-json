@@ -1,7 +1,10 @@
 has some leading lines
 
 {
-  "foo": "bar"
+  "foo": "bar",
+  "list": [{
+    "some": 42
+  }]
 }
 
 and another line at the end

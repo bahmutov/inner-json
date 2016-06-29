@@ -11,6 +11,7 @@
         "npm prune",
         "npm run deps",
         "npm test",
+        "npm run e2e",
         "npm run ban"
       ],
       "pre-push": [

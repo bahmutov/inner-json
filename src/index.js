@@ -18,7 +18,7 @@ function findJsonIn (text) {
   const openingBrace = text.indexOf('{')
   la(openingBrace !== -1, 'could not find opening brace in', text)
 
-  const closingBrace = text.indexOf('}', openingBrace)
+  const closingBrace = text.lastIndexOf('}')
   la(closingBrace !== -1, 'could not find closing brace in', text)
 
   text = text.substr(openingBrace, closingBrace - openingBrace + 1)
