@@ -23,10 +23,10 @@ This module allows you to quickly remove leading or trailing non-JSON lines.
 
 ```
 cypress ci --spec my-spec.js --reporter json > out.json
-inner-json out.json > out.json
+inner-json out.json > cleaned.json
 ```
 
-Now the `out.json` only contains the inner valid JSON object.
+Now the `cleaned.json` only contains the inner valid JSON object.
 
 ### Small print
 
