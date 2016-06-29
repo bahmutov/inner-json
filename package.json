@@ -1,7 +1,7 @@
 {
   "name": "inner-json",
+  "version": "0.0.0-semantic-release",
   "description": "Removes text before and after JSON object in a given file",
-  "version": "1.0.0",
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "bugs": "https://github.com/bahmutov/inner-json/issues",
   "config": {
@@ -62,7 +62,8 @@
     "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
     "test": "npm run unit",
     "unit": "mocha test/*-spec.js",
-    "e2e": "node src/index.js test/example.json"
+    "e2e": "node src/index.js test/example.json",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {
     "ban-sensitive-files": "1.8.3",
@@ -73,7 +74,8 @@
     "nsp": "2.5.0",
     "pre-git": "3.10.0",
     "standard": "7.1.2",
-    "standard-format": "2.2.2"
+    "standard-format": "2.2.2",
+    "semantic-release": "^4.3.5"
   },
   "dependencies": {
     "check-more-types": "2.21.0",
