@@ -1,32 +1,26 @@
-#!/usr/bin/env node
-
 'use strict'
 
 const la = require('lazy-ass')
 const is = require('check-more-types')
 
-const args = process.argv.slice(2)
-if (!args.length) {
-  console.error('missing filename')
-  process.exit(-1)
-}
-
-const filename = args[0]
-
+// returns just the text
 function findJsonIn (text) {
   la(is.unemptyString(text), 'empty input text', text)
+  const sep = '\n====\n'
   const openingBrace = text.indexOf('{')
-  la(openingBrace !== -1, 'could not find opening brace in', text)
+  if (is.not.found(openingBrace)) {
+    const msg = 'could not find opening brace in' + sep + text + sep
+    throw new Error(msg)
+  }
 
   const closingBrace = text.lastIndexOf('}')
-  la(closingBrace !== -1, 'could not find closing brace in', text)
+  if (is.not.found(closingBrace)) {
+    const msg = 'could not find closing brace in' + sep + text + sep
+    throw new Error(msg)
+  }
 
   text = text.substr(openingBrace, closingBrace - openingBrace + 1)
-  return text
+  return text.trim()
 }
 
-const fs = require('fs')
-la(fs.existsSync(filename), 'cannot find file', filename)
-const text = fs.readFileSync(filename, 'utf8')
-const jsonText = findJsonIn(text)
-console.log(jsonText)
+module.exports = findJsonIn

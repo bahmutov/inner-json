@@ -28,9 +28,10 @@
     "node": ">=6"
   },
   "bin": {
-    "inner-json": "src/index.js"
+    "inner-json": "bin/inner-json.js"
   },
   "files": [
+    "bin",
     "src/*.js",
     "!src/*-spec.js"
   ],
@@ -54,16 +55,16 @@
   "scripts": {
     "ban": "ban",
     "deps": "deps-ok",
-    "format": "standard-format -w src/*.js",
+    "format": "standard-format -w src/*.js bin/*.js",
     "issues": "git-issues",
     "license": "license-checker --production --onlyunknown --csv",
-    "lint": "standard --verbose src/*.js test/*.js",
+    "lint": "standard --verbose src/*.js bin/*.js test/*.js",
     "pretest": "npm run format && npm run lint",
     "secure": "nsp check",
     "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
     "test": "npm run unit",
     "unit": "mocha test/*-spec.js",
-    "e2e": "node src/index.js test/example.json",
+    "e2e": "node bin/inner-json.js test/example.json",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {

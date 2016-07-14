@@ -8,6 +8,8 @@
 [![semantic-release][semantic-image] ][semantic-url]
 [![js-standard-style][standard-image]][standard-url]
 
+## Use
+
 Often, spec output from JSON test reporters contains extra lines before or after
 the JSON. For example CypressCI outputs the following when using json reporter
 
@@ -27,6 +29,16 @@ inner-json out.json > cleaned.json
 ```
 
 Now the `cleaned.json` only contains the inner valid JSON object.
+
+## API
+
+```js
+const innerJson = require('..')
+const text = read('/some/file', 'utf8')
+const jsonText = innerJson(text)
+```
+
+`jsonText` should contain just the inner JSON portion of the input text.
 
 ### Small print
 
