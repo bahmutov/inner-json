@@ -72,15 +72,15 @@
     "deps-ok": "1.1.0",
     "git-issues": "1.2.0",
     "license-checker": "5.1.2",
-    "mocha": "2.5.3",
-    "nsp": "2.5.0",
+    "mocha": "3.0.0-1",
+    "nsp": "2.6.1",
     "pre-git": "3.10.0",
-    "standard": "7.1.2",
-    "standard-format": "2.2.2",
-    "semantic-release": "^4.3.5"
+    "semantic-release": "6.3.0",
+    "standard": "8.0.0-beta.0",
+    "standard-format": "2.2.2"
   },
   "dependencies": {
-    "check-more-types": "2.21.0",
+    "check-more-types": "2.22.0",
     "lazy-ass": "1.4.0"
   }
 }
